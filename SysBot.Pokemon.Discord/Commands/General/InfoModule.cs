@@ -16,8 +16,10 @@ namespace SysBot.Pokemon.Discord
     // Copyright 2017, Christopher F. <foxbot@protonmail.com>
     public class InfoModule : ModuleBase<SocketCommandContext>
     {
-        private const string detail = "I am an open-source Discord bot powered by PKHeX.Core and other open-source software.";
-        private const string repo = "https://github.com/kwsch/SysBot.NET";
+        private const string detail = "Pokémon Legends";
+        private const string link = "http://pokelegend.co/";
+        private const string vers = "1.3.0";
+        private const string Game = "Brilliant Diamond and Shinning Pearl";
 
         [Command("info")]
         [Alias("about", "whoami", "owner")]
@@ -31,27 +33,19 @@ namespace SysBot.Pokemon.Discord
                 Description = detail,
             };
 
-            builder.AddField("Info",
-                $"- [Source Code]({repo})\n" +
-                $"- {Format.Bold("Owner")}: {app.Owner} ({app.Owner.Id})\n" +
-                $"- {Format.Bold("Library")}: Discord.Net ({DiscordConfig.Version})\n" +
+            builder.AddField("PokeLegend",
+                $"- [Pokémon Legends]({link})\n" +
+                $"- [SysBot]({Game})\n" +
+                $"- {Format.Bold("Owner")}: {app.Owner}\n" +
                 $"- {Format.Bold("Uptime")}: {GetUptime()}\n" +
-                $"- {Format.Bold("Runtime")}: {RuntimeInformation.FrameworkDescription} {RuntimeInformation.ProcessArchitecture} " +
-                $"({RuntimeInformation.OSDescription} {RuntimeInformation.OSArchitecture})\n" +
-                $"- {Format.Bold("Buildtime")}: {GetBuildTime()}\n" +
-                $"- {Format.Bold("Core")}: {GetCoreDate()}\n" +
-                $"- {Format.Bold("AutoLegality")}: {GetALMDate()}\n"
+                $"- {Format.Bold("Version")}: {vers}\n"
                 );
 
-            builder.AddField("Stats",
-                $"- {Format.Bold("Heap Size")}: {GetHeapSize()}MiB\n" +
-                $"- {Format.Bold("Guilds")}: {Context.Client.Guilds.Count}\n" +
-                $"- {Format.Bold("Channels")}: {Context.Client.Guilds.Sum(g => g.Channels.Count)}\n" +
-                $"- {Format.Bold("Users")}: {Context.Client.Guilds.Sum(g => g.MemberCount)}\n"
-                );
-
-            await ReplyAsync("Here's a bit about me!", embed: builder.Build()).ConfigureAwait(false);
+            await ReplyAsync("**PokeLegend Information**", embed: builder.Build()).ConfigureAwait(false);
         }
+
+
+
 
         private static string GetUptime() => (DateTime.Now - Process.GetCurrentProcess().StartTime).ToString(@"dd\.hh\:mm\:ss");
         private static string GetHeapSize() => Math.Round(GC.GetTotalMemory(true) / (1024.0 * 1024.0), 2).ToString(CultureInfo.CurrentCulture);
