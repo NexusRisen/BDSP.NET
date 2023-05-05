@@ -64,6 +64,9 @@ namespace SysBot.Pokemon.Discord
                 var la = new LegalityAnalysis(pkm);
                 var spec = GameInfo.Strings.Species[template.Species];
                 pkm = PKMConverter.ConvertToType(pkm, typeof(T), out _) ?? pkm;
+                bool memes = Info.Hub.Config.Trade.Memes && await TradeAdditionsModule<T>.TrollAsync(Context, pkm is not T || !la.Valid, pkm).ConfigureAwait(false);
+                if (memes)
+                   return;
                 if (pkm is not T pk || !la.Valid)
                 {
                     var reason = result == "Timeout" ? $"That {spec} set took too long to generate." : $"I wasn't able to create a {spec} from that set.";

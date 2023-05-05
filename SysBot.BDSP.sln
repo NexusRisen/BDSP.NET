@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SysBot.Pokemon", "SysBot.Pokemon\SysBot.Pokemon.csproj", "{2B520A84-74AF-40EC-9B10-A9FCF950D02E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02DCB75C-452F-4E70-B7AF-C37729B10699}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SysBot.Pokemon.WinForms", "SysBot.Pokemon.WinForms\SysBot.Pokemon.WinForms.csproj", "{886B1440-B333-4095-8E44-D71D043D20A9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SysBot.Pokemon.Discord", "SysBot.Pokemon.Discord\SysBot.Pokemon.Discord.csproj", "{C4BE4124-C1CF-4A81-AA7C-DE96A169CF1D}"

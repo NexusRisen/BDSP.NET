@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="deps\SysBot.Base.dll" />
     <None Remove="Resources\legalitems.json" />
   </ItemGroup>
 

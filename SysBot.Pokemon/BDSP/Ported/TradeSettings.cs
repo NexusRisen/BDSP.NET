@@ -36,6 +36,12 @@ namespace SysBot.Pokemon
         [Category(TradeConfig), Description("When enabled, the screen will be turned off during normal bot loop operation to save power.")]
         public bool ScreenOff { get; set; } = false;
 
+        [Category(TradeConfig), Description("Silly, useless feature to post a meme when certain illegal or disallowed trade requests are made.")]
+        public bool Memes { get; set; } = false;
+
+        [Category(TradeConfig), Description("Enter either direct picture or gif links, or file names with extensions. For example, file1.png, file2.jpg, etc.")]
+        public string MemeFileNames { get; set; } = string.Empty;
+
         [Category(TradeConfig), Description("Max amount of time pressing A to wait for a trade to end before trying to exit to overworld.")]
         public int TradeAnimationMaxDelaySeconds { get; set; } = 90; // 150 maybe
 
