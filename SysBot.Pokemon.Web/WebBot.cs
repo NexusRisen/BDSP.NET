@@ -46,7 +46,7 @@ namespace SysBot.Pokemon.Web
 
                     var notifier = new WebTradeNotifier<T>(pk, trainer, Code, WebNotifierInstance);
                     var detail = new PokeTradeDetail<T>(pk, trainer, notifier, PokeTradeType.Seed, Code, true);
-                    var trade = new TradeEntry<T>(detail, userID, PokeRoutineType.BDSPSpecialRequest, "");
+                    var trade = new TradeEntry<T>(detail, userID, PokeRoutineType.SpecialRequest, "");
 
                     Info.AddToTradeQueue(trade, userID, false);
                 }

@@ -30,32 +30,12 @@ namespace SysBot.Pokemon.WinForms
             var remove = new ToolStripMenuItem("Remove");
             remove.Click += (_, __) => TryRemove();
             RCMenu.Items.Add(remove);
-            RCMenu.Opening += RcMenuOnOpening;
-
+            
             var controls = Controls;
             foreach (var c in controls.OfType<Control>())
             {
                 c.MouseEnter += BotController_MouseEnter;
                 c.MouseLeave += BotController_MouseLeave;
-            }
-        }
-
-        private void RcMenuOnOpening(object sender, CancelEventArgs e)
-        {
-            if (Runner == null)
-                return;
-
-            bool runOnce = Runner.RunOnce;
-            var bot = Runner.GetBot(State);
-            if (bot is null)
-                return;
-
-            foreach (var tsi in RCMenu.Items.OfType<ToolStripMenuItem>())
-            {
-                var text = tsi.Text;
-                tsi.Enabled = Enum.TryParse(text, out BotControlCommand cmd)
-                    ? runOnce && cmd.IsUsable(bot.IsRunning, bot.IsPaused)
-                    : !bot.IsRunning;
             }
         }
 

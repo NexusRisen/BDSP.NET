@@ -130,7 +130,6 @@ namespace SysBot.Pokemon
 
         public bool LogUser(T hashid, ulong nid, string id, string plaintext, string toPing)
         {
-            bool safe = true;
             if (!string.IsNullOrWhiteSpace(id))
             {
                 var exists = UserInfoList.FirstOrDefault(x => x.HashIdentifier != null && x.HashIdentifier.Equals(hashid) && x.NIDIdentifier.Equals(nid) && x.Identity.Equals(id));
@@ -146,7 +145,6 @@ namespace SysBot.Pokemon
                 if (altExists != default && altExists.Identity != id && !allNidsAreZero)
                 {
                     LogUtil.LogInfo($"{toPing} Found someone using multiple accounts {plaintext} ({id}) exists with at least one previous identity: {altExists.Identity} ({altExists.PlaintextName})", nameof(AbuseDetection<T>));
-                    safe = false;
                 }
             }
 

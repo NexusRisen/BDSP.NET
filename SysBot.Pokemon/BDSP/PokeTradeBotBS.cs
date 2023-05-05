@@ -365,7 +365,7 @@ namespace SysBot.Pokemon
                 if (poke.Type == PokeTradeType.Seed && itemReq == SpecialTradeType.None)
                 {
                     // Immediately exit, we aren't trading anything.
-                    poke.SendNotification(this, "SSRNo held item or valid request, the BDSP bots are special request only!");
+                    poke.SendNotification(this, "No held item or valid request, the BDSP bots are special request only!");
                     return await EndQuickTradeAsync(poke, offered, token).ConfigureAwait(false);
                 }
 
@@ -376,7 +376,7 @@ namespace SysBot.Pokemon
                 {
                     if (itemReq != SpecialTradeType.None)
                     {
-                        poke.SendNotification(this, "SSRYour request isn't legal. Please try a different Pokémon or request.");
+                        poke.SendNotification(this, "Your request isn't legal. Please try a different Pokémon or request.");
                         if (!string.IsNullOrWhiteSpace(Hub.Config.Web.URIEndpoint))
                             AddToPlayerLimit(tradePartner.IDHash.ToString(), -1);
                     }
@@ -385,11 +385,11 @@ namespace SysBot.Pokemon
                 }
 
                 if (itemReq == SpecialTradeType.WonderCard)
-                    poke.SendNotification(this, "SSRDistribution success!");
+                    poke.SendNotification(this, "Distribution success!");
                 else if (itemReq != SpecialTradeType.None && itemReq != SpecialTradeType.Shinify)
-                    poke.SendNotification(this, "SSRSpecial request successful!");
+                    poke.SendNotification(this, "Special request successful!");
                 else if (itemReq == SpecialTradeType.Shinify)
-                    poke.SendNotification(this, "SSRShinify success! Thanks for being part of the community!");
+                    poke.SendNotification(this, "Shinify success! Thanks for being part of the community!");
                 if (tradeCount++ > 3)
                     break;
 

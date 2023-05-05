@@ -7,10 +7,10 @@ namespace SysBot.Pokemon
     {
         public override PokeRoutineExecutorBase CreateBot(PokeTradeHub<PB8> Hub, PokeBotState cfg) => cfg.NextRoutineType switch
         {
-            PokeRoutineType.BDSPFlexTrade or PokeRoutineType.Idle
-            or PokeRoutineType.BDSPClone
+            PokeRoutineType.FlexTrade or PokeRoutineType.Idle
+            or PokeRoutineType.Clone
             or PokeRoutineType.LinkTrade
-            or PokeRoutineType.BDSPSpecialRequest
+            or PokeRoutineType.SpecialRequest
             => new PokeTradeBotBS(Hub, cfg),
 
             _ => throw new ArgumentException(nameof(cfg.NextRoutineType)),

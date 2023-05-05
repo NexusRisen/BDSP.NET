@@ -35,7 +35,7 @@ namespace SysBot.Pokemon.Discord
 
             builder.AddField("PokeLegend",
                 $"- [Pokémon Legends]({link})\n" +
-                $"- [SysBot]({Game})\n" +
+                $"- {Game}\n" +
                 $"- {Format.Bold("Owner")}: {app.Owner}\n" +
                 $"- {Format.Bold("Uptime")}: {GetUptime()}\n" +
                 $"- {Format.Bold("Version")}: {vers}\n"

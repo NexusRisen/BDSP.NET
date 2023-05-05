@@ -81,7 +81,7 @@ namespace SysBot.Pokemon.WinForms
             CB_Routine.DisplayMember = nameof(ComboItem.Text);
             CB_Routine.ValueMember = nameof(ComboItem.Value);
             CB_Routine.DataSource = list;
-            CB_Routine.SelectedValue = (int)PokeRoutineType.BDSPFlexTrade; // default option
+            CB_Routine.SelectedValue = (int)PokeRoutineType.FlexTrade; // default option
 
             var protocols = (SwitchProtocol[])Enum.GetValues(typeof(SwitchProtocol));
             var listP = protocols.Select(z => new ComboItem(z.ToString(), (int)z)).ToArray();
