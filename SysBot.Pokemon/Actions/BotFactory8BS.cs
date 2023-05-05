@@ -9,7 +9,7 @@ namespace SysBot.Pokemon
         {
             PokeRoutineType.BDSPFlexTrade or PokeRoutineType.Idle
             or PokeRoutineType.BDSPClone
-            or PokeRoutineType.BDSPLinkTrade
+            or PokeRoutineType.LinkTrade
             or PokeRoutineType.BDSPSpecialRequest
             => new PokeTradeBotBS(Hub, cfg),
 

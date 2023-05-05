@@ -11,7 +11,7 @@
         // Add your own custom bots here so they don't clash for future main-branch bot releases.
         BDSPFlexTrade = 10000,
         BDSPSpecialRequest = 10001,
-        BDSPLinkTrade = 10002,
+        LinkTrade = 10002,
         BDSPClone = 10003,
         BDSPDump = 10004
     }

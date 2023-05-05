@@ -306,7 +306,7 @@ namespace SysBot.Pokemon.Twitch
             {
                 int code = Util.ToInt32(msg);
                 var sig = GetUserSignificance(user);
-                AddToTradeQueue(user.Pokemon, code, e, sig, PokeRoutineType.BDSPLinkTrade, user.UseTradeID, out string message);
+                AddToTradeQueue(user.Pokemon, code, e, sig, PokeRoutineType.LinkTrade, user.UseTradeID, out string message);
                 client.SendMessage(Channel, message);
             }
 #pragma warning disable CA1031 // Do not catch general exception types

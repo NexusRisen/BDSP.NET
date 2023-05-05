@@ -208,7 +208,7 @@ namespace SysBot.Pokemon.Discord
                 }
             }
 
-            await QueueHelper<T>.AddToQueueAsync(Context, code, trainerName, sig, pks, PokeRoutineType.BDSPLinkTrade, PokeTradeType.Specific, usr).ConfigureAwait(false);
+            await QueueHelper<T>.AddToQueueAsync(Context, code, trainerName, sig, pks, PokeRoutineType.LinkTrade, PokeTradeType.Specific, usr).ConfigureAwait(false);
         }
     }
 }

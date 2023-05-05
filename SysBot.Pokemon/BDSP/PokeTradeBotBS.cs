@@ -350,7 +350,7 @@ namespace SysBot.Pokemon
                                 await SetBoxPokemon(generatedMon, token, sav).ConfigureAwait(false);
                                 SetText(sav, $"Trade code: {poke.Code:0000 0000}\r\n!request for {tradePartner.TrainerName}");
                                 poke.Code = Hub.Config.Trade.GetRandomTradeCode();
-                                Hub.Queues.Enqueue(PokeRoutineType.BDSPLinkTrade, poke, 3);
+                                Hub.Queues.Enqueue(PokeRoutineType.LinkTrade, poke, 3);
                             }
                         }
                     }
